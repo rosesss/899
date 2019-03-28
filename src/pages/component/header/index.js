@@ -7,12 +7,15 @@ class Header extends Component {
                 <div className='company-msg'>
                     <img src={require('./../../../assets/image/5.jpg')} alt=""/>
                     <div className='msg-box'>
-                        <p className='name'>bajiujiu</p>
-                        <p className='inter'>1234567.com</p>
+                        <p className='name'>晨寰网络</p>
+                        <p className='inter'>Chenhuan Network</p>
                     </div>
                 </div>
                 <div className='contact'>
-                    合作热线:12121212121
+                    <div>
+                        <span>登录</span>|<span>注册</span>
+                    </div>
+                    <p>合作热线：156-3990-1688</p>
                 </div>
             </div>
         );
