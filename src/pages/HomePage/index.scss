@@ -1,0 +1,25 @@
+.home-box {
+    // padding: 0 200px;
+}
+.ant-carousel .slick-slide {
+    text-align: center;
+    height: 630px;
+    line-height: 630px;
+    background: #364d79;
+    overflow: hidden;
+   
+  }
+  .ant-carousel .slick-dots li.slick-active  {
+      button {
+        height: 16px;
+        margin-top: -10px;
+        border-radius: 8px;
+      }
+   
+  }
+  .ant-carousel .slick-dots li button {
+      width: 16px;
+      height: 16px;
+      border-radius: 100%;
+      
+  }
