@@ -1,0 +1,123 @@
+.footer {
+  margin-top: 20px;
+  background: #343434;
+  .in-box {
+    width: 1200px;
+    margin: auto;
+    .footer-box {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding-top: 37px;
+      color: #fff;
+      .company-instro {
+        flex: 2;
+        .title-box {
+          p {
+            font-size:16px;
+            font-family:MicrosoftYaHei;
+            font-weight:bold;
+            color: #fff;
+            margin: 0;
+          }
+          span {
+            display: inline-block;
+            height: 1px;
+            width: 83px;
+            background: #FFFEFE;
+          }
+        }
+        .detail-box {
+          font-size:12px;
+          font-family:MicrosoftYaHei;
+          font-weight:400;
+          margin-top: 30px;
+        }
+      }
+      .toast-box {
+        flex: 3;
+        margin-left: 60px;
+        .title-box {
+          p {
+            font-size:16px;
+            font-family:MicrosoftYaHei;
+            font-weight:bold;
+            color: #fff;
+            margin: 0;
+          }
+          span {
+            display: inline-block;
+            height: 1px;
+            width: 83px;
+            background: #FFFEFE;
+          }
+        }
+        .detail-box {
+          font-size:12px;
+          font-family:MicrosoftYaHei;
+          font-weight:400;
+          margin-top: 22px;
+        }
+      }
+      .seo-init,.deep-init {
+        flex: 1.5;
+        .title-box {
+          p {
+            font-size:16px;
+            font-family:MicrosoftYaHei;
+            font-weight:bold;
+            color: #fff;
+            margin: 0;
+          }
+          span {
+            display: inline-block;
+            height: 1px;
+            width: 83px;
+            background: #FFFEFE;
+          }
+        }
+
+        .detail-box {
+          margin-top: 22px;
+          .init-btn {
+            text-align: center;
+            padding: 6px 10px;
+            margin: auto;
+            border-radius: 10px;
+            background: #FFFEFE;
+            color: #010101;
+            font-size: 12px;
+            font-family:MicrosoftYaHei;
+            font-weight:400;
+          }
+        }
+      }
+
+      .seo-init {
+        margin-left: 60px;
+      }
+      .contact-box {
+        flex: 1.5;
+        margin-left: 67px;
+        .title-box {
+          p {
+            font-size:16px;
+            font-family:MicrosoftYaHei;
+            font-weight:bold;
+            color: #fff;
+            margin: 0;
+          }
+          span {
+            display: inline-block;
+            height: 1px;
+            width: 83px;
+            background: #FFFEFE;
+          }
+        }
+        .contact-people {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}

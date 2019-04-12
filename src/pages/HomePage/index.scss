@@ -1,13 +1,25 @@
 .home-box {
     // padding: 0 200px;
 }
+@media screen and(max-width: 900px) {
+
+}  
+
+@media screen and(min-width: 1200px) {
+
+}
+
+.in-box {
+    width: 1200px;
+    margin: 0 auto;
+} 
+
 .ant-carousel .slick-slide {
     text-align: center;
     height: 630px;
     line-height: 630px;
     background: #364d79;
     overflow: hidden;
-   
   }
   .ant-carousel .slick-dots li.slick-active  {
       button {
@@ -21,5 +33,232 @@
       width: 16px;
       height: 16px;
       border-radius: 100%;
+  }
+  .services-box {
+      background: #fff;
+      padding: 0 0 100px;
+      .title-box {
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 58px;
+          .title {
+            text-align: center;
+            font-size: 30px;
+            color: #008BE4;
+            font-weight: bold;
+            }
+            span {
+                height: 2px;
+                width: 180px;
+                display: inline-block;
+                margin: auto;
+                background: #008BE4;
+            }
+      }
+      
+      .service {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 100px;
+        .service-item {
+            text-align: center;
+            width: 15%;
+            padding: 20px;
+           
+           img {
+               margin-top: 10px;
+           }
+           .name {
+               margin: 0;
+               margin-top: 20px;
+           }
+           .instro {
+               margin-top: 20px;
+                p {
+                    margin: 0;
+                }
+           }
+           .todetail-box {
+               padding: 5px 10px;
+               background: #008BE4;
+               border-radius: 16px;
+               font-size: 14px;
+               color: #fff;
+               margin-top: 30px;
+               display: inline-block;
+           }
+        }
+        .service-item:hover {
+            box-shadow: 1px 1px 5px #ccc;
+        }
+      }
       
   }
+
+  .not-services {
+        background: url('../../assets/image/bg.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        padding: 0 0 70px 0;
+        .title-box {
+            text-align: center;
+            span {
+                height: 3px;
+                background: #333;
+                display: inline-block;
+                width: 400px;
+            }
+            p {
+                font-size:30px;
+                font-family:MicrosoftYaHei-Bold;
+                font-weight:bold;
+                color: #333;
+                margin-bottom: 10px;
+                padding-top: 50px;
+            }
+        }
+        .not-services-box {
+            margin-top: 80px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            .not-services-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                flex: 1;
+                height: 300px;
+                background: #fff;
+                border-radius: 25px;
+                margin: 0 10px;
+                img {
+                    width: 74px;
+                    height: 63px;
+                    margin-top: 53px;
+                }
+                p {
+                    margin-top: 60px;
+                    font-size: 16px;
+                    color: #FF6666;
+                    font-family:MicrosoftYaHei-Bold;
+                    font-weight:bold;
+                    text-align: center;
+                } 
+            }
+        }
+    }
+
+    .services-enterprise {
+            padding-top: 50px;
+            padding-bottom: 40px;
+            .title-box {
+                text-align: center;
+                p {
+                    font-size:30px;
+                    font-family:MicrosoftYaHei-Bold;
+                    font-weight:bold;
+                    color: #333;
+                    margin-bottom: 10px;
+                    margin-top: 0;
+                }
+                span {
+                    display: inline-block;
+                    height: 3px;
+                    width: 200px;
+                    background: #333;
+                }
+            }
+
+            .all-enterprise-box {
+                display: flex;
+                flex-direction: row;
+                // justify-content: space-around/;
+                flex-wrap: wrap;
+                margin-top: 100px;
+                .enterprise-item {
+                    width: 20%;
+                    margin: 10px 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+
+    .case-class-box {
+        margin-top: 71px;
+        padding: 60px 0 40px;
+        .in-box {
+            width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            .case-box,.class-box {
+                flex: 1;
+                .title-box {
+                    text-align: center;
+                    p {
+                        font-size:30px;
+                        font-family:MicrosoftYaHei-Bold;
+                        font-weight:bold;
+                        color: #333;
+                        margin: 0 0 10px;
+                    }
+                    span {
+                        display: inline-block;
+                        height: 3px;
+                        width: 90px;
+                        background: #333;
+                    }
+                }
+                .show-box {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 20px;
+                    .item {
+                        display: flex;
+                        flex-direction: row;
+                        padding: 20px 23px;
+                        width: 80%;
+                        img {
+                            width: 82px;
+                            height: 82px;
+                            border-radius: 10px;
+                        }
+                        .msg {
+                            margin-left: 10px;
+                            .item-name {
+                                color: #333333;
+                                font-size:20px;
+                                font-family:MicrosoftYaHei-Bold;
+                                font-weight:bold;
+                                margin: 0;
+                            }
+                            .item-instro {
+                                font-size:16px;
+                                font-family:MicrosoftYaHei;
+                                font-weight:400;
+                                color: #333;
+                                margin-top: 10px;
+                            }
+                        }
+                    };
+                    .item:hover {
+                        box-shadow: 3px 3px 5px #ccc;
+                    }
+                }
+            }
+            .class-box {
+                margin-left: 20px;
+            }
+        }
+    }
