@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Carousel } from 'antd';
+
 import {Link} from 'react-router-dom';
 import Header from './../component/header';
+import Banner from './../component/Banner';
 import Navigation from './../component/Navigation';
 import Footer from './../component/Footer';
 import fastImg from './../../assets/image/fast.png';
@@ -62,25 +63,16 @@ class HomePage extends Component {
         }
     }
     
-     onChange(a, b, c) {
-        console.log(a, b, c);
-    }
+     
 
     render() {
         return (
             <div className='home-box'>
                 
                     <div className='header'>
-                        <Header></Header>
-                        <Navigation></Navigation>
-                        <div className='img-box'>
-                            <Carousel afterChange={() => this.onChange()}>
-                                <div><h3>1</h3></div>
-                                <div><h3>2</h3></div>
-                                <div><h3>3</h3></div>
-                                <div><h3>4</h3></div>
-                            </Carousel>
-                        </div>
+                        {/* <Header></Header>
+                        <Navigation {...this.props}></Navigation>
+                        <Banner></Banner> */}
                     
                         <div className='services-box'>
                             <div className='in-box'>
@@ -93,7 +85,7 @@ class HomePage extends Component {
                                     {
                                         this.state.servicesList.map((item, index) => {
                                             return (
-                                                <div className='service-item'>
+                                                <div className='service-item' key={index}>
                                                     <img src={item.img} alt="" />
                                                     <p className='name'>{item.name}</p>
                                                     <div className='instro'>
@@ -118,7 +110,7 @@ class HomePage extends Component {
                                     {
                                         this.state.notServicesList.map((item, index) => {
                                             return (
-                                                <div className='not-services-item'>
+                                                <div className='not-services-item' key={index}>
                                                     <img src={item.img} alt="" />
                                                     <p>{item.type}</p>
                                                 </div>
@@ -161,7 +153,7 @@ class HomePage extends Component {
                                     {
                                         [1,2,3,4].map((item, index) => {
                                             return(
-                                                <div className='item'>
+                                                <div className='item' key={index}>
                                                     <img src={require('./../../assets/image/新闻图.png')} alt=""/>
                                                     <div className='msg'>
                                                         <p className='item-name'>OKR与KPI的区别是什么？</p>
@@ -182,7 +174,7 @@ class HomePage extends Component {
                                     {
                                         [1, 2, 3, 4].map((item, index) => {
                                             return (
-                                                <div className='item'>
+                                                <div className='item' key={index}>
                                                     <img src={require('./../../assets/image/新闻图.png')} alt="" />
                                                     <div className='msg'>
                                                         <p className='item-name'>OKR与KPI的区别是什么？</p>
@@ -197,7 +189,7 @@ class HomePage extends Component {
                         </div>
                     </div>
                 </div>
-                <Footer></Footer>
+                
             </div>
         );
     }

@@ -9,6 +9,7 @@
       flex-direction: row;
       justify-content: space-around;
       padding-top: 37px;
+      padding-bottom: 20px;
       color: #fff;
       .company-instro {
         flex: 2;
@@ -81,9 +82,9 @@
           margin-top: 22px;
           .init-btn {
             text-align: center;
-            padding: 6px 10px;
-            margin: auto;
-            border-radius: 10px;
+            padding: 4px 0;
+            width: 80px;
+            border-radius: 25px;
             background: #FFFEFE;
             color: #010101;
             font-size: 12px;
@@ -116,6 +117,35 @@
         }
         .contact-people {
           margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  .link-box {
+    padding: 20px auto;
+    border-top: 1px solid #FFFFFF;
+    .in-box {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size:12px;
+      font-family:MicrosoftYaHei;
+      font-weight:400;
+      justify-content: flex-start;
+      color: #fff;
+      p {
+        margin: 20px 0;
+      }
+      .link {
+        padding: 20px;
+        a {
+          margin-left: 10px;
+          color: #fff;
+          font-size:12px;
+          font-family:MicrosoftYaHei;
+          font-weight:400;
+          text-decoration:underline;
         }
       }
     }

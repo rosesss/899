@@ -14,26 +14,7 @@
     margin: 0 auto;
 } 
 
-.ant-carousel .slick-slide {
-    text-align: center;
-    height: 630px;
-    line-height: 630px;
-    background: #364d79;
-    overflow: hidden;
-  }
-  .ant-carousel .slick-dots li.slick-active  {
-      button {
-        height: 16px;
-        margin-top: -10px;
-        border-radius: 8px;
-      }
-   
-  }
-  .ant-carousel .slick-dots li button {
-      width: 16px;
-      height: 16px;
-      border-radius: 100%;
-  }
+
   .services-box {
       background: #fff;
       padding: 0 0 100px;
@@ -66,8 +47,8 @@
         margin-top: 100px;
         .service-item {
             text-align: center;
-            width: 15%;
-            padding: 20px;
+            width: 20%;
+            padding: 20px 0;
            
            img {
                margin-top: 10px;

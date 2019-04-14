@@ -36,32 +36,67 @@ class Navigation extends Component {
     }
 
     changePage(id) {
-        this.setState({
-            pageIndex: id
-        })
+        console.log(id)
+        switch (id) {
+            case 1:
+                this.setState({
+                    pageIndex: id
+                })
+                this.props.history.push('./')
+            break;
+            case 2:
+                this.setState({
+                    pageIndex: id
+                })
+                this.props.history.push('./fastrowseo')
+                break;
+            case 3:
+                this.setState({
+                    pageIndex: id
+                })
+                this.props.history.push('./deeppromote')
+                break;
+            case 4:
+                this.setState({
+                    pageIndex: id
+                })
+                this.props.history.push('./caseseo')
+                break;
+            case 5:
+                this.setState({
+                    pageIndex: id
+                })
+                this.props.history.push('./class')
+                break;    
+            default:
+                break;
+        }
     }
     
     render() {
         return (
             <div className='nav-box'>
-                {
-                    this.state.navList.map((item, index) => {
-                        return (
-                            <div className='nav-item' onClick={() => this.changePage(item.id)} key={index}>
-                                <div >
-                                    {item.name}
+                <div className='in-box'>
+                    {
+                        this.state.navList.map((item, index) => {
+                            return (
+                                <div className='nav-item' onClick={() => this.changePage(item.id)} key={index}>
+                                    <div >
+                                        {item.name}
+                                    </div>
+                                    {
+                                        this.state.pageIndex === item.id ?
+                                            <span></span>
+                                            : ''
+                                    }
+
                                 </div>
-                                {
-                                    this.state.pageIndex === item.id ? 
-                                        <span></span>
-                                    :''
-                                }
-                                
-                            </div>
-                            
-                        )
-                    })
-                }
+
+                            )
+                        })
+                    }
+                </div>
+                
             </div>
         );
     }

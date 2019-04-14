@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './index.scss';
+import { Link } from 'react-router-dom';
 class Footer extends Component {
   render() {
     return (
@@ -63,7 +64,27 @@ class Footer extends Component {
                     <img src={require('./../../../assets/image/二维码.png')} alt=""/>
                 </div>
               </div>
+
+              
           </div>
+            <div className='link-box'>
+                <div className='in-box'>
+                    <p>友情链接:</p>
+                    <div className='link'>
+                        {
+                            [1, 2, 3, 4, 5, 6].map((item, index) => {
+                                return (
+                                    <Link to='www.baidu.com' key={index}>
+                                        百度
+                                    </Link>
+                                )
+                            })
+                        }
+
+                    </div>
+                </div>
+                
+            </div>
       </div>
     )
   }

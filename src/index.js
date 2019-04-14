@@ -8,6 +8,8 @@ import { createHashHistory } from 'history';
 
 import stores from './store';
 import router from './router';
+
+import Navigation from './pages/component/Navigation';
 import './index.css';
 
 const hashHistory = createHashHistory();
