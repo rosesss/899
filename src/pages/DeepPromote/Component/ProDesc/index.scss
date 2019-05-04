@@ -1,0 +1,40 @@
+.pro-desc-box {
+    background: url('./../../../../assets/image/advanbg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 25px;
+    margin-top: 100px;
+    .pro-desc-bg-box {
+        background: rgba($color: #fff, $alpha: 0.7);
+        .pro-desc-msg {
+            width: 1200px;
+            margin: auto;
+            padding: 25px;
+            h5 {
+                font-size:24px;
+                font-family:MicrosoftYaHei-Bold;
+                font-weight:bold;
+                color: #333;
+                text-align: center;
+            }
+            .pro-desc-steps {
+                margin-top: 40px;
+                .step-item {
+                    margin-bottom: 20px;
+                    p {
+                        font-size:20px;
+                        font-family:MicrosoftYaHei-Bold;
+                        font-weight:bold;
+                        color: #333;
+                    }
+                    .step-desc {
+                        font-size:16px;
+                        font-family:MicrosoftYaHei;
+                        font-weight:400;
+                        color: #333;
+                    }
+                }
+            }
+        }
+    }
+}

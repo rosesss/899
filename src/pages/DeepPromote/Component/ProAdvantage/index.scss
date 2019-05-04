@@ -1,0 +1,35 @@
+.pro-advanr-tage-box {
+    margin-top: 90px;
+    h5 {
+        font-size:24px;
+        font-family:MicrosoftYaHei-Bold;
+        font-weight:bold;
+        color: #333;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+    .pro-advan-list-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .pro-advan-item {
+            width: 30%;
+            padding: 30px 30px 90px 30px;
+            margin-top: 70px;
+            p {
+                font-size:20px;
+                font-family:MicrosoftYaHei-Bold;
+                font-weight:bold;
+                color: #333;
+            }
+            .pro-advan-item-desc {
+                font-size:18px;
+                font-family:MicrosoftYaHei;
+                font-weight:400;
+                color: #333;
+            }
+        }
+    }
+}

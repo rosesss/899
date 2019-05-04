@@ -8,7 +8,7 @@ import SeoPage from './SeoPage';
 import DeepPromote from './DeepPromote';
 import CaseSeo from './CaseSeo';
 import Class from './Class';
-
+import AboutUs from './AboutUs';
 
 import Header from './component/header';
 import Navigation from './component/Navigation';
@@ -29,6 +29,7 @@ class PageIndex extends Component {
             <Route path="/deeppromote" component={DeepPromote} />
             <Route path="/caseseo" component={CaseSeo} />
             <Route path="/class" component={Class} />
+            <Route path='/aboutus' component={AboutUs}/>
             <Redirect exact from="/" to="/home" />
           </Switch>
         </div>

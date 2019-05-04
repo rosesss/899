@@ -1,0 +1,164 @@
+.deep-promote-box {
+    height: 100%;
+        .deep-submit-info {
+            width: 100%;
+            background: #ebebeb;
+            padding: 48px 0 84px;
+             .deep-in-box {
+                width: 1200px;
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .border {
+                    width: 50%;
+                    height: 2px;
+                    background: #008BE4;
+                }
+                h3 {
+                    font-size:36px;
+                    font-family:MicrosoftYaHei-Bold;
+                    font-weight:bold;
+                    color: #008BE4;
+                    margin-top: 42px;
+                }
+                h4 {
+                    font-size:30px;
+                    font-family:MicrosoftYaHei-Bold;
+                    font-weight:bold;
+                    color: #008BE4;
+                    margin-top: 46px;
+                    margin-bottom: 44px;
+                }
+            }
+        }
+        .in-box {
+            display: flex;
+            flex-direction: column;
+            .submit-info-box {
+                padding: 20px 0;
+                .name,.phone {
+                    margin-bottom: 20px;
+                    height: 40px;
+                    label {
+                        font-size:24px;
+                        font-family:MicrosoftYaHei-Bold;
+                        font-weight:bold;
+                        color: #333;
+                    }
+                    input {
+                        border: 1px solid #D9D9D9;
+                        width: 300px;
+                        height: 100%;
+                        border-radius: 3px;
+                    }
+                }
+                .submit-btn {
+                    width: 100%;
+                    height: 37px;
+                    background: #008BE4;
+                    border-radius: 5px;
+                    color: #fff;
+                    font-size:24px;
+                    font-family:MicrosoftYaHei;
+                    font-weight:400;
+                    text-align: center;
+                    line-height: 37px;
+                    margin-top:5px;
+                }
+                span {
+                    font-size:16px;
+                    font-family:MicrosoftYaHei;
+                    font-weight:400;
+                    margin-top: 20px;
+                    color: #FF3B3B;
+                }
+            }
+            .deep-promote-advantage {
+                .title-box {
+                    margin: 0 auto;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: 58px;
+                    .title {
+                        text-align: center;
+                        font-size: 30px;
+                        color: #333333;
+                        font-weight: bold;
+                        }
+                        span {
+                            height: 2px;
+                            width: 180px;
+                            display: inline-block;
+                            margin: auto;
+                            background: #333333;
+                        }
+                }
+                .deep-advantage-box {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    margin-top: 20px;
+                    .advantage-item {
+                        width: 45%;
+                        min-height: 354px;
+                        display: flex;
+                        flex-direction: column;
+                        padding: 30px;
+                        border: 2px dashed #D9D9D9; 
+                        margin: 10px;
+                        border-radius: 25px;
+                        .advantage-item-msg{
+                            text-align: center;
+                            p {
+                                text-align: center;
+                                font-size:24px;
+                                font-family:MicrosoftYaHei-Bold;
+                                font-weight:bold;
+                                color: #333;
+                                margin-top: 10px;
+                            }
+                            img {
+                                width: 182px;
+                                height: 160px;
+                                text-align: center;
+                            }
+                        }
+                        .advantage-instro {
+                            width: 80%;
+                            margin: auto;
+                            font-size:14px;
+                            font-family:MicrosoftYaHei;
+                            font-weight:400;
+                            color: #333;
+                        }
+                    }
+                }
+                .advantage-functions {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-top: 52px;
+                    .functions-item, .functioned {
+                        width: 20%;
+                        padding: 23px 12px;
+                        border: 1px solid #666666;
+                        border-radius: 22px;
+                        text-align: center;
+                        font-size:20px;
+                        font-family:MicrosoftYaHei;
+                        font-weight:400;
+                    }
+                    .functioned {
+                        background: #008BE4;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }

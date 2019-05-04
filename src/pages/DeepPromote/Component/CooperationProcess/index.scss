@@ -1,0 +1,35 @@
+.coo-pro-box {
+    margin-top: 90px;
+    .cooperation-step-box {
+        h5 {
+            font-size:24px;
+            font-family:MicrosoftYaHei-Bold;
+            font-weight:bold;
+            color: #333;
+            text-align: center;
+        }
+        .cooperation-box {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 70px;
+            .coo-step {
+                width: 20%;
+                text-align: center;
+                p {
+                    font-size:14px;
+                    font-family:MicrosoftYaHei-Bold;
+                    font-weight:bold;
+                    color: #333;
+                    margin: 0;
+                }
+                img {
+                    margin-bottom: 20px;
+                }
+            }
+            .arrow-img {
+                padding: 0 30px;
+            }
+        }
+    }
+}

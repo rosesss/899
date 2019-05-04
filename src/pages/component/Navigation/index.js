@@ -68,6 +68,12 @@ class Navigation extends Component {
                 })
                 this.props.history.push('./class')
                 break;    
+            case 6:
+                this.setState({
+                    pageIndex: id
+                })
+                this.props.history.push('./aboutus')
+                break;
             default:
                 break;
         }
