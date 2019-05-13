@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import { observer, inject } from 'mobx-react';
+import { computed } from 'mobx';
 import {Link} from 'react-router-dom';
 import Header from './../component/header';
 import Banner from './../component/Banner';
@@ -14,6 +15,9 @@ import financialImg from './../../assets/image/金融.png';
 import notbrandImg from './../../assets/image/品牌.png';
 import enterpriseImg from './../../assets/image/虚假宣传.png';
 import './index.scss';
+
+@inject('stores')
+@observer
 class HomePage extends Component {
     constructor(props) {
         super(props);
@@ -63,7 +67,14 @@ class HomePage extends Component {
         }
     }
     
+    @computed get homeStore() {
+        return this.props.stores.homeStore;
+    }
      
+    async componentDidMount() {
+        await this.homeStore.BannaerList()
+    }
+    
 
     render() {
         return (
