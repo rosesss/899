@@ -3,9 +3,9 @@ const path = require('path');
 
 const defineOutput = () => config => {
     const mode = process.env.NODE_ENV === 'development' ? 'dev' : 'prod';
-    if (mode === 'prod') {
-        Object.assign(config.output, { publicPath: 'https://cdn-star.kuipmake.com/' });
-    }
+    // if (mode === 'prod') {
+    //     Object.assign(config.output, { publicPath: 'https://cdn-star.kuipmake.com/' });
+    // }
     return config;
 };
 
