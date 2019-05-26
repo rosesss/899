@@ -9,7 +9,7 @@
 
 }
 
-.in-box {
+.in-home-box {
     width: 1200px;
     margin: 0 auto;
 } 
@@ -174,15 +174,16 @@
     .case-class-box {
         margin-top: 71px;
         padding: 60px 0 40px;
-        .in-box {
+        .in-box-list {
             width: 1200px;
             margin: auto;
             display: flex;
             flex-direction: row;
-            align-items: center;
+            // align-items: center;
             justify-content: space-between;
             .case-box,.class-box {
                 flex: 1;
+                min-height: 100px;
                 .title-box {
                     text-align: center;
                     p {
@@ -230,11 +231,14 @@
                                 font-weight:400;
                                 color: #333;
                                 margin-top: 10px;
+                                max-height: 33px;
+                                overflow: hidden;
                             }
                         }
                     };
                     .item:hover {
-                        box-shadow: 3px 3px 5px #ccc;
+                        box-shadow:#ccc 5px 5px 10px ;
+                        border-radius: 5px;
                     }
                 }
             }

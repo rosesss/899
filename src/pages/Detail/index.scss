@@ -1,0 +1,26 @@
+.detail-box {
+    .in-detail-box {
+        width: 1200px;
+        margin: 60px auto;
+        .detail-from {
+            font-size:18px;
+            font-family:MicrosoftYaHei-Bold;
+            font-weight:bold;
+            color: #333;
+        }
+        .detail {
+            text-align: center;
+            .detail-title {
+                font-size:30px;
+                font-family:MicrosoftYaHei-Bold;
+                font-weight:bold;
+                color: #333;
+                .detail.time {
+                    font-size:18px;
+                    font-family:MicrosoftYaHei;
+                    font-weight:400;
+                }
+            }
+        }
+    }
+}

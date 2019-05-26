@@ -6,15 +6,20 @@ class Header extends Component {
             <div className='header-box'>
                 <div className='in-box'>
                     <div className='company-msg'>
-                        <img src={require('./../../../assets/image/5.jpg')} alt="" />
+                        <img src={require('./../../../assets/image/logo.png')} alt="" />
                         <div className='msg-box'>
-                            <p className='name'>晨寰网络</p>
-                            <p className='inter'>Chenhuan Network</p>
+                            <div className="name">
+                                <img src={require('./../../../assets/image/宸寰网络.png')} alt="" />
+                            </div>
+                            <div className="inter">
+                                <img src={require('./../../../assets/image/英文字体.png')} alt="" />
+                            </div>
                         </div>
                     </div>
                     <div className='contact'>
                         <div>
-                            <span>登录</span>|<span>注册</span>
+                            <span>登录</span>
+                            <span>注册</span>
                         </div>
                         <p>合作热线：156-3990-1688</p>
                     </div>

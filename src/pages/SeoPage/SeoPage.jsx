@@ -97,23 +97,41 @@ class SeoPage extends Component {
               <span></span>
             </div>
             <div className='problems-list-box'>
-
-
-              {
-                [1, 2, 3, 4, 5, 6].map((item, index) => {
-                  return (
-                    <div className='problem-item'>
-                      <p>优化有限制吗</p>
-                      <div>
-                        目前只针对排名前100名的词，且只针对百度PC/移动端，不做非法、灰色词汇
-                  </div>
-                      <img src={require('./../../assets/image/problem.png')} alt="" />
+                <div className='problem-item'>
+                    <p>优化有限制吗？</p>
+                    <div>
+                    目前只针对排名前50名的词，且只针对百度PC/移动端，不做非法、灰色词汇
                     </div>
-
-                  )
-                })
-              }
-
+                    <img src={require('./../../assets/image/problem.png')} alt="" />
+                </div>
+                <div className='problem-item'>
+                    <p>怎么付费扣费？</p>
+                    <div>
+                        系统采用预充值模式，上排名后按天收费，15天不上首页可自主停止优化并退款
+                    </div>
+                    <img src={require('./../../assets/image/problem.png')} alt="" />
+                </div>
+                    <div className='problem-item'>
+                        <p>无排名网站可以做吗？</p>
+                        <div>
+                            可以，无排名网站需提供后台，tfp相关信息，做好站内调整，具体联系客服
+                        </div>
+                        <img src={require('./../../assets/image/problem.png')} alt="" />
+                    </div>
+                    <div className='problem-item'>
+                        <p>成功率怎么样？</p>
+                        <div>
+                            经过大量测试，指数小于500的15天优化成功率大于60%
+                        </div>
+                        <img src={require('./../../assets/image/problem.png')} alt="" />
+                    </div>
+                    <div className='problem-item'>
+                        <p>账户可查吗</p>
+                        <div>
+                            系统记录每一笔扣费明细，随时可自助查看，账户做到完全清晰透明
+                        </div>
+                        <img src={require('./../../assets/image/problem.png')} alt="" />
+                    </div>
             </div>
           </div>
         </div>
@@ -127,21 +145,41 @@ class SeoPage extends Component {
                 <span></span>
               </div>
               <div className='cooperation-list'>
-                {
-                  [1,2,3].map((item,index) => {
-                    return(
-                      <div className='cooperation-item' key={index}>
+                    <div className='cooperation-item' >
                         <div className='cooperation-title'>
-                          客户直接查询与系统排名不一致？
-                  </div>
+                            客户直接查询与系统排名不一致？
+                        </div>
                         <div className='cooperation-reason'>
-                          系统中排名为自动抓取，每天抓取一次，由于有些词的地区排名差异及百度不同地区服务器的更新策略问题，
-                  有可能客户直接查询的排名与系统不一致，排名均以系统抓取到的为准，一般过一两天，两者会趋于一致。
-                  </div>
-                      </div>
-                    )
-                  })
-                }
+                            系统中排名为自动抓取，每天抓取一次，由于有些词的地区排名差异及百度不同地区服务器的更新策略问题，
+                            有可能客户直接查询的排名与系统不一致，排名均以系统抓取到的为准，一般过一两天，两者会趋于一致。
+                        </div>
+                    </div>
+                    <div className='cooperation-item' >
+                        <div className='cooperation-title'>
+                            场景：提交后，排名没有上去，就说我们什么都没做
+                        </div>
+                        <div className='cooperation-reason'>
+                            客户叨叨:你们是不是什么都没做，就等着排名自然上去，然后收钱？ 拜托，自己提交的词心里没数吗，如果觉得自己能上去，麻烦不要提交给我们，
+                            另外seo优化有成功率，没有100%的，如果您纠结这个数字，请直接投放百度竞价！
+                        </div>
+                    </div>
+                    <div className='cooperation-item' >
+                        <div className='cooperation-title'>
+                            场景：客户网站排名掉了
+                        </div>
+                        <div className='cooperation-reason'>
+                            客户叨叨:你们把我的关键词优化到没排名，怎么处理？1.我们用大量的网站做过实验，并没有出现因为优化掉排名的情况;2.如果这么牛逼，是不是收
+                            保护费更快，想打击谁打击谁.....
+                        </div>
+                    </div>
+                    <div className='cooperation-item' >
+                        <div className='cooperation-title'>
+                            场景：网络没有排名，想做优化
+                        </div>
+                        <div className='cooperation-reason'>
+                            目前不提供此类站点优化
+                        </div>
+                    </div>
               </div>
             </div>
             

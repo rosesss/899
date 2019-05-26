@@ -1,8 +1,54 @@
 import React, { Component } from 'react'
+import { observer, inject } from 'mobx-react';
+import { computed } from 'mobx';
 import './index.scss';
 import { Link } from 'react-router-dom';
+
+@inject('stores')
+@observer
 class Footer extends Component {
+  
+  constructor(props) {
+      super(props);
+      this.state = {
+
+      }
+  }
+  
+    @computed get homeStore() {
+        return this.props.stores.homeStore;
+    }
+
+  componentDidMount() {
+      this.getCompanyInfo()
+      this.getLinkAll()
+  }
+
+    async getCompanyInfo() {
+      try {
+          await this.homeStore.getCompanyInfo();
+      } catch (error) {
+          console.log(error)
+      }
+  }
+
+  async getLinkAll() {
+      try {
+          await this.homeStore.getLinkAll()
+      } catch (error) {
+          console.log(error)
+      }
+  }
+
+    gotoUrl(url) {
+        console.log(window)
+        window.open(`http://${url}`, "_blank")
+    }
+  
+  
   render() {
+      const linkAll = this.homeStore.linkAll;
+      const compantInfo = this.homeStore.compantInfo;
     return (
       <div className='footer'>
           <div className='in-box'>
@@ -12,9 +58,7 @@ class Footer extends Component {
                         <p>宸寰网络</p>
                         <span></span>
                     </div>
-                    <div className='detail-box'>
-                        本公司现主要提供百度，SEO快速排名服务，深度超级推广，全网屏霸服务；宸寰网络服务宗旨即快排名，低收费
-                    </div>
+                    <div className="detail-box" dangerouslySetInnerHTML={{ __html:compantInfo.shortDescribe}}></div>
                 </div>
 
                 <div className='toast-box'>
@@ -22,11 +66,7 @@ class Footer extends Component {
                       <p>友情提示</p>
                       <span></span>
                   </div>
-                  <div className='detail-box'>
-                      <div>不接受违法，色情，灰色词汇等，如客户自助提交，发现后即刻停止优化，账户余额一律不退。</div>
-                      <div>如果对于关键词排名抓取方式和抓取规则有异议，请勿使用此系统提交关键词。</div> 
-                      <div>SEO排名波动属于正常情况，排名下降也正常，对于提交的关键词，只能接受排名上升，不能接受排名下降的，请勿提交</div>
-                  </div>
+                <div className="detail-box" dangerouslySetInnerHTML={{ __html: compantInfo.notice }}></div>
                 </div>
 
                 <div className='seo-init'>
@@ -57,11 +97,10 @@ class Footer extends Component {
                         <span></span>
                     </div>
                     <p className='contact-people'>
-                        联系人：贺经理
+                            联系人：{compantInfo.contacts}
                     </p>
-                    <p className='contact-call'>电话:156-3990-1688</p>
-
-                    <img src={require('./../../../assets/image/二维码.png')} alt=""/>
+                    <p className='contact-call'>电话:{compantInfo.phoneNumber}</p>
+                    <img src={`http://seoapi.chamhuan.com/${compantInfo.wxQrCode}`} alt=""/>
                 </div>
               </div>
 
@@ -72,13 +111,14 @@ class Footer extends Component {
                     <p>友情链接:</p>
                     <div className='link'>
                         {
-                            [1, 2, 3, 4, 5, 6].map((item, index) => {
+                            linkAll.length > 0 ? linkAll.map((item, index) => {
                                 return (
-                                    <Link to='www.baidu.com' key={index}>
-                                        百度
-                                    </Link>
+                                    <div key={index} onClick={() => this.gotoUrl(item.linkUrl)}>
+                                        {item.linkName}
+                                    </div>
                                 )
                             })
+                            :''
                         }
 
                     </div>

@@ -63,30 +63,72 @@ class HomePage extends Component {
                     type:'要求虚假宣传的企业',
                     img:enterpriseImg
                 }
-            ]
+            ],
+            page: 1,
+            size: 5,
         }
     }
-    
+
     @computed get homeStore() {
         return this.props.stores.homeStore;
     }
-     
+    
     async componentDidMount() {
-        await this.homeStore.BannaerList()
+        try {
+            await this.homeStore.ServiceCustomerList()
+        } catch (error) {
+            console.log(error)
+        }
+        this.getCase()
+        this.getClass()
     }
     
+    async getCase() {
+        try {
+            await this.homeStore.getCaseListForPageSize(1,5);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async getClass() {
+        try {
+            await this.homeStore.getClassListForPageSize(1,5);
+        } catch (error) {
+            console.log(error);            
+        }
+    }
+
+    gotoNav(title) {
+       switch (title) {
+            case '快排SEO':
+               this.homeStore.changeRoute(2);
+                this.props.history.push('/fastrowseo')
+                break;
+            case '深度推广':
+               this.homeStore.changeRoute(3);
+                this.props.history.push('/deeppromote')
+                break;
+            case '晨寰网络':
+               this.homeStore.changeRoute(6);
+                this.props.history.push('/aboutus')
+                break;
+            default:
+                break;
+        }
+    }
 
     render() {
+        const serviesList = this.homeStore.serviesList;
         return (
             <div className='home-box'>
-                
                     <div className='header'>
                         {/* <Header></Header>
                         <Navigation {...this.props}></Navigation>
                         <Banner></Banner> */}
                     
                         <div className='services-box'>
-                            <div className='in-box'>
+                            <div className='in-home-box'>
                                 <div className='title-box'>
                                     <p className='title'>服务项目内容</p>
                                     <span></span>
@@ -103,7 +145,7 @@ class HomePage extends Component {
                                                         <p>{item.instro}</p>
                                                         <p>{item.title}</p>
                                                     </div>
-                                                    <Link className='todetail-box' to='/'>进一步了解</Link>
+                                                    <div className='todetail-box' onClick={() => this.gotoNav(item.name)}>进一步了解</div>
                                                 </div>
                                             )
                                         })
@@ -112,7 +154,7 @@ class HomePage extends Component {
                             </div>
                         </div>
                         <div className='not-services'>
-                            <div className='in-box'>
+                            <div className='in-home-box'>
                                 <div className='title-box'>
                                     <p className='title'>晨寰网络不服务以下5种类型企业</p>
                                     <span></span>
@@ -133,20 +175,21 @@ class HomePage extends Component {
                         </div>
 
                     <div className='services-enterprise'>
-                        <div className='in-box'>
+                        <div className='in-home-box'>
                             <div className='title-box'>
                                 <p>我们服务的企业有哪些</p>
                                 <span></span>
                             </div>
                             <div className='all-enterprise-box'>
                                 {
-                                    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((item, index) => {
+                                    serviesList.length > 0 ? serviesList.map((item, index) => {
                                         return (
                                             <div key={index} className='enterprise-item'>
-                                                <img src={require('./../../assets/image/华为商标.png')} alt="" />
+                                                <img src={`http://seoapi.chamhuan.com${item.url}`} alt="" />
                                             </div>
                                         )
                                     })
+                                    :''
                                 }
                             </div>
                         </div>
@@ -154,7 +197,7 @@ class HomePage extends Component {
 
 
                     <div className='case-class-box'>
-                        <div className='in-box'>
+                        <div className='in-box-list'>
                             <div className='case-box'>
                                 <div className='title-box'>
                                     <p>案例展示</p>
@@ -162,17 +205,18 @@ class HomePage extends Component {
                                 </div>
                                 <div className='show-box'>
                                     {
-                                        [1,2,3,4].map((item, index) => {
+                                        this.homeStore.homeCaseList.length > 0 ? this.homeStore.homeCaseList.map((item, index) => {
                                             return(
                                                 <div className='item' key={index}>
                                                     <img src={require('./../../assets/image/新闻图.png')} alt=""/>
                                                     <div className='msg'>
-                                                        <p className='item-name'>OKR与KPI的区别是什么？</p>
-                                                        <div className='item-instro'>2019年1月开始，百度大力在内部推行OKRs，李彦宏制定公司最高目标和关键结果...</div>
+                                                        <p className='item-name'>{item.caseName}</p>
+                                                        <div className='item-instro' dangerouslySetInnerHTML={{ __html: item.content }} />
                                                     </div>
                                                 </div>
                                             )
                                         })
+                                        :''
                                     }
                                 </div>
                             </div>
@@ -183,17 +227,17 @@ class HomePage extends Component {
                                 </div>
                                 <div className='show-box'>
                                     {
-                                        [1, 2, 3, 4].map((item, index) => {
+                                        this.homeStore.homeClassList.length > 0 ? this.homeStore.homeClassList.map((item, index) => {
                                             return (
                                                 <div className='item' key={index}>
                                                     <img src={require('./../../assets/image/新闻图.png')} alt="" />
                                                     <div className='msg'>
-                                                        <p className='item-name'>OKR与KPI的区别是什么？</p>
-                                                        <div className='item-instro'>2019年1月开始，百度大力在内部推行OKRs，李彦宏制定公司最高目标和关键结果...</div>
+                                                        <p className='item-name'>{item.forumName}</p>
+                                                        <div className='item-instro' dangerouslySetInnerHTML={{ __html: item.content }} />
                                                     </div>
                                                 </div>
                                             )
-                                        })
+                                        }) : ''
                                     }
                                 </div>
                             </div>

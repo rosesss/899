@@ -16,8 +16,11 @@
         flex-wrap: wrap;
         .pro-advan-item {
             width: 30%;
-            padding: 30px 30px 90px 30px;
+            padding: 30px;
+            min-height: 220px;
             margin-top: 70px;
+            border: 2px dashed #D9D9D9;
+            border-radius: 10px;
             p {
                 font-size:20px;
                 font-family:MicrosoftYaHei-Bold;

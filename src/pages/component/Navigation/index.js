@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import { observer, inject } from 'mobx-react';
+import { computed } from 'mobx';
 import './index.scss';
+
+@inject('stores')
+@observer
 class Navigation extends Component {
     constructor(props) {
         super(props);
@@ -9,6 +14,7 @@ class Navigation extends Component {
                 {
                     id:1,
                     name: '首页',
+                    router: '11'
                 },
                 {
                     id:2,
@@ -35,38 +41,44 @@ class Navigation extends Component {
         }
     }
 
+    @computed get homeStore() {
+        return this.props.stores.homeStore;
+    }
+    
     changePage(id) {
-        console.log(id)
-        switch (id) {
+        console.log(this.props,'props')
+        this.homeStore.changeRoute(id);
+        const routerId = this.homeStore.routerId;
+        switch (routerId) {
             case 1:
                 this.setState({
-                    pageIndex: id
+                    pageIndex: 1
                 })
-                this.props.history.push('./')
+                this.props.history.push('/')
             break;
             case 2:
                 this.setState({
                     pageIndex: id
                 })
-                this.props.history.push('./fastrowseo')
+                this.props.history.push('/fastrowseo')
                 break;
             case 3:
                 this.setState({
                     pageIndex: id
                 })
-                this.props.history.push('./deeppromote')
+                this.props.history.push('/deeppromote')
                 break;
             case 4:
                 this.setState({
                     pageIndex: id
                 })
-                this.props.history.push('./caseseo')
+                this.props.history.push('/caseseo')
                 break;
             case 5:
                 this.setState({
                     pageIndex: id
                 })
-                this.props.history.push('./class')
+                this.props.history.push('/class')
                 break;    
             case 6:
                 this.setState({
@@ -80,6 +92,7 @@ class Navigation extends Component {
     }
     
     render() {
+        const routerId = this.homeStore.routerId;
         return (
             <div className='nav-box'>
                 <div className='in-box'>
@@ -91,11 +104,10 @@ class Navigation extends Component {
                                         {item.name}
                                     </div>
                                     {
-                                        this.state.pageIndex === item.id ?
+                                        routerId === item.id ?
                                             <span></span>
                                             : ''
                                     }
-
                                 </div>
 
                             )

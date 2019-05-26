@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
+import { observer, inject } from 'mobx-react';
+import { computed } from 'mobx';
+import { message } from 'antd';
 import './index.scss';
 import ProInstro from './Component/ProInstro';
 import ProAdvantage from './Component/ProAdvantage';
 import ProDesc from './Component/ProDesc';
 import CooperationProcess from './Component/CooperationProcess';
+
+@inject('stores')
+@observer
 class DeepPromote extends Component {
     constructor(props) {
         super(props);
@@ -26,8 +32,14 @@ class DeepPromote extends Component {
                     title: '合作流程'
                 }
             ],
-            dataIndex:0
+            dataIndex:0,
+            name: '',
+            phone: ''
         }
+    }
+
+    @computed get homeStore() {
+        return this.props.stores.homeStore;
     }
 
     changeItem(id) {
@@ -60,6 +72,38 @@ class DeepPromote extends Component {
         )
     }
 
+
+    async gotoAddInfo() {
+        const { name, phone } = this.state;
+        const TEL_REGEXP = /^1([38]\d|5[0-35-9]|7[3678])\d{8}$/;
+        if (!(TEL_REGEXP.test(phone))) {
+            message.error('您的手机号不正确')
+        } else {
+            const data = {
+                name: name,
+                phone: phone,
+            }
+            try {
+                await this.homeStore.addInfo(data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+    }
+
+    changeName(e) {
+        console.log(e.target.value)
+        this.setState({
+            name: e.target.value
+        })
+    }
+
+    changePhone(e) {
+        console.log(e.target.value)
+        this.setState({
+            phone: e.target.value
+        })
+    }
   render() {
     return (
         <div className='deep-promote-box'>
@@ -75,13 +119,13 @@ class DeepPromote extends Component {
                     <div className='submit-info-box'>
                         <div className='name'>
                             <label htmlFor="">您的姓名:</label>
-                            <input type="text" />
+                            <input type="text" value={this.state.name} onChange={(e) => this.changeName(e)}/>
                         </div>
                         <div className='phone'>
                             <label htmlFor="">联系电话:</label>
-                            <input type="text"/>
+                            <input type="text" value={this.state.phone} onChange={(e) => this.changePhone(e)}/>
                         </div>
-                        <div className='submit-btn'>提交</div>
+                        <div className='submit-btn' onClick={() => this.gotoAddInfo()}>提交</div>
                         <span>注：我们会在24小时之内给您回复</span>
                     </div>
                     <div className='deep-promote-advantage'>
