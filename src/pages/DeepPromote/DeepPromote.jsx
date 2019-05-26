@@ -80,11 +80,12 @@ class DeepPromote extends Component {
             message.error('您的手机号不正确')
         } else {
             const data = {
-                name: name,
-                phone: phone,
+                requesterName: name,
+                phoneNumber: phone,
             }
             try {
                 await this.homeStore.addInfo(data)
+                message.success('您已成功提交，请等候我们的工作人员与您联系')
             } catch (error) {
                 console.log(error)
             }
