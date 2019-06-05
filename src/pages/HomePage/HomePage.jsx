@@ -131,7 +131,7 @@ class HomePage extends Component {
                             <div className='in-home-box'>
                                 <div className='title-box'>
                                     <p className='title' style={{color: '#333', fontSize:30}}>服务项目内容</p>
-                                    <span></span>
+                                    <span style={{background: '#000'}}></span>
                                 </div>
 
                                 <div className='service'>
