@@ -58,8 +58,8 @@ class SeoPage extends Component {
                   <p>一天见效  全网最底价</p>
                 </div>
                 <div className='login-register'>
-                  <Button type="primary" >登录</Button>
-                  <Button className='register-btn'>注册</Button>
+                  <Button type="primary" size='large'>登录</Button>
+                  <Button className='register-btn' size='large'>注册</Button>
                 </div>
               </div>
             </div>

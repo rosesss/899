@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react';
 import { computed } from 'mobx';
-import { message } from 'antd';
+import { message, Input } from 'antd';
 import './index.scss';
 import ProInstro from './Component/ProInstro';
 import ProAdvantage from './Component/ProAdvantage';
@@ -115,20 +115,24 @@ class DeepPromote extends Component {
                         <h4>免费为您量身定制详细深度优化方案</h4>
                         <div className='border'></div>
                     </div>
-                </div>
-                <div className='in-box'>
                     <div className='submit-info-box'>
                         <div className='name'>
                             <label htmlFor="">您的姓名:</label>
-                            <input type="text" value={this.state.name} onChange={(e) => this.changeName(e)}/>
+                            <Input type="text" value={this.state.name} onChange={(e) => this.changeName(e)}/>
                         </div>
                         <div className='phone'>
                             <label htmlFor="">联系电话:</label>
-                            <input type="text" value={this.state.phone} onChange={(e) => this.changePhone(e)}/>
+                            <Input type="text" value={this.state.phone} onChange={(e) => this.changePhone(e)}/>
                         </div>
+                        <div style={{padding: '10px 400px', textAlign: 'center'}}>
                         <div className='submit-btn' onClick={() => this.gotoAddInfo()}>提交</div>
                         <span>注：我们会在24小时之内给您回复</span>
+                        </div>
+                        
                     </div>
+                </div>
+                <div className='in-box'>
+                    
                     <div className='deep-promote-advantage'>
                         <div className='title-box'>
                             <p className='title'>深度优化的优势</p>

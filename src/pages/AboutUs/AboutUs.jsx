@@ -41,7 +41,6 @@ class AboutUs extends Component {
                         <p className='component-title'>{compantInfo.companyName}</p>
                         <span></span>
                         <div className='component-instro' dangerouslySetInnerHTML={{ __html: compantInfo.shortDescribe}}>
-                            
                         </div>
                         <div className='component-info'>
                             <div className='com-address-master-info'>

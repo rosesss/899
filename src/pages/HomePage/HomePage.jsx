@@ -130,7 +130,7 @@ class HomePage extends Component {
                         <div className='services-box'>
                             <div className='in-home-box'>
                                 <div className='title-box'>
-                                    <p className='title'>服务项目内容</p>
+                                    <p className='title' style={{color: '#333', fontSize:30}}>服务项目内容</p>
                                     <span></span>
                                 </div>
 

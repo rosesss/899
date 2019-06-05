@@ -90,8 +90,9 @@
     }
     .seo-case-item {
         &:hover {
-            box-shadow: #ccc 10px 5px 5px;
+            box-shadow: #d6d6d6 0 0 10px;
             border: none;
+            cursor: pointer;
         }
             margin-top: 20px;
             padding: 25px;
@@ -146,6 +147,16 @@
             .item-time {
                 display: flex;
                 flex-direction: column;
+                font-family: '微软雅黑';
+                .time-day {
+                    font-size: 60px;
+                    color: #333;
+                    margin: 0;
+                }
+                .item-mouth {
+                    font-size: 14px;
+                    color: #333;
+                }
             }
         }
 }

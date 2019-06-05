@@ -30,7 +30,7 @@ class Navigation extends Component {
                 },
                 {
                     id:5,
-                    name: '晨寰讲堂',
+                    name: '宸寰讲堂',
                 },
                 {
                     id:6,
