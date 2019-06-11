@@ -23,3 +23,5 @@ export const addInfo = (params) => request.post('/requester_info/add', params);
 export const getCaseDetail = (id) => request.get(`/cases/find/${id}`);
 
 export const getClassDetail = (id) => request.get(`/forum/find/${id}`);
+
+export const getKeyWords = (id) => request.get(`/company_info/find/${id}`);

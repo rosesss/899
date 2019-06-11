@@ -12,7 +12,8 @@ import {
     addInfo,
     getCaseDetail,
     getAllClassList,
-    getClassDetail
+    getClassDetail,
+    getKeyWords
 } from './../api/index.js';
 
 export default class homeStore {
@@ -41,6 +42,7 @@ export default class homeStore {
     @observable classLists = [];
 
     @observable classDetail = {};
+
     @action
     changeRoute(id) {
         this.routerId = id;
@@ -60,7 +62,6 @@ export default class homeStore {
     async ServiceCustomerList() {
         try {
             const res = await ServiceCustomerList()
-            console.log(res,'servues');
             this.serviesList = res.data.data;
         } catch (error) {
             console.log(error)
@@ -71,7 +72,6 @@ export default class homeStore {
     async getCaseListForPageSize(page, size) {
         try {
             const res = await getCaseListForPageSize(page, size);
-            console.log(res);
             this.homeCaseList = res.data.data.content;
         } catch (error) {
             console.log(error)
@@ -82,7 +82,6 @@ export default class homeStore {
     async getClassListForPageSize(page, size) {
         try {
             const res = await getClassListForPageSize(page, size);
-            console.log(res);
             this.homeClassList = res.data.data.content;
         } catch (error) {
             
@@ -93,7 +92,6 @@ export default class homeStore {
     async getAllCaseList() {
         try {
             const res = await getAllCaseList();
-            console.log(res);
             this.caseLists = res.data.data;
             this.caseAllCount = res.data.data.length;
         } catch (error) {
@@ -105,7 +103,6 @@ export default class homeStore {
     async getCompanyInfo() {
         try {
             const res = await getCompanyInfo();
-            console.log(res,'company');
             this.compantInfo = res.data.data[0];
         } catch (error) {
             console.log(error);
@@ -116,7 +113,6 @@ export default class homeStore {
     async getLinkAll() {
         try {
             const res = await getLinkAll();
-            console.log(res);
             this.linkAll = res.data.data;
         } catch (error) {
             console.log(error)
@@ -127,7 +123,6 @@ export default class homeStore {
     async aboutUs(id) {
         try {
             const res = await aboutUs(id);
-            console.log(res);
             this.compantInfo = res.data.data;
         } catch (error) {
             console.log(error);
@@ -138,7 +133,6 @@ export default class homeStore {
     async addInfo(params) {
         try {
             const res = await addInfo(params)
-            console.log(res);
         } catch (error) {
             console.log(error)
         }
@@ -148,7 +142,6 @@ export default class homeStore {
     async getCaseDetail(id) {
         try {
             const res = await getCaseDetail(id);
-            console.log(res)
             this.detail = res.data.data
         } catch (error) {
             console.log(error)
@@ -159,7 +152,6 @@ export default class homeStore {
     async getAllClassList() {
         try {
             const res = await getAllClassList();
-            console.log(res)
             this.classLists = res.data.data;
         } catch (error) {
             console.log(error)
@@ -170,10 +162,19 @@ export default class homeStore {
     async getClassDetail(id) {
         try {
             const res = await getClassDetail(id)
-            console.log(res,'detailsss');
             this.classDetail = res.data.data;
         } catch (error) {
             console.log(error);
+        }
+    }
+
+    @action
+    async getKeyWords(id) {
+        try {
+            const res = await getKeyWords(id);
+            return res.data.data;
+        } catch (error) {
+            console.log(error)
         }
     }
 }
